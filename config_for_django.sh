@@ -16,4 +16,7 @@ code --install-extension thebarkman.vscode-djaneiro
 code --install-extension ffaraone.pyfilesgen #?
 # dongli.python-preview
 code --install-extension alefragnani.bookmarks
-ms-python.anaconda-extension-pack
+code --install-extension ms-python.anaconda-extension-pack
+
+code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension eamodio.gitlens
