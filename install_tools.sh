@@ -53,7 +53,7 @@ peints 'Install gparted'
 sudo apt-get install gparted
 
 peints 'Install Synergy'
-sudo apt-get install libcanberra-gtk-module
+sudo apt-get install libcanberra-gtk-module sni-qt
 sudo apt install synergy
 
 peints 'Install qBittorrent'

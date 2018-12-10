@@ -20,3 +20,7 @@ code --install-extension ms-python.anaconda-extension-pack
 
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension eamodio.gitlens
+code --install-extension zignd.html-css-class-completion
+code --install-extension rebornix.project-snippets
+code --install-extension knisterpeter.vscode-commitizen
+
