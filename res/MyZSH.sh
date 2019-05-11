@@ -57,6 +57,13 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time anaconda virtualenv pyenv) #kubecontext docker_machine
+
+POWERLEVEL9K_ANACONDA_BACKGROUND='green'
+
+
 
 plugins=(
   git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
@@ -75,8 +82,14 @@ plugins=(
   themes
   history
   zsh-syntax-highlighting
+  web-search
+  debian
+  tmux
+  urltools
 )
+apt_pref='apt'
 
+ZSH_TMUX_AUTOSTART=false
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 #POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
@@ -93,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
+
 export LANG=ru_RU.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -130,6 +144,36 @@ gtts() { gtts-cli $1 | mpg123 - }
 alias d2='source activate Django2'
 alias dea='source deactivate'
 
+# mini organaze:
+
+mysort() {
+   mkdir pdf; mv *.pdf pdf/;
+   mkdir torrent; mv *.torrent torrent/;
+   mkdir doc; mv *.doc* doc/;
+
+   mkdir -p img; mv *.png img/;
+   mkdir -p img; mv *.jpg img/;
+   mkdir -p img; mv *.svg img/; 
+   mkdir -p img; mv *.kra img/; 
+
+
+   mkdir -p exe; mv *.exe exe/;
+   mkdir -p deb; mv *.deb deb/;
+
+   mkdir -p deb; mv *.deb deb/;
+
+   mkdir -p zip; mv *.zip zip/;
+   mkdir -p zip; mv *.7z zip/;
+   mkdir -p zip; mv *.rar zip/;
+
+   mkdir -p music; mv *.mp3 music/;
+   
+   rm *.crdownload;
+   rm Thumbs.db*;
+   rm *~;
+   find . -empty -type d -delete;
+
+}
 
 # added by Anaconda3 5.3.1 installer
 # >>> conda init >>>
