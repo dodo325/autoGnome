@@ -22,11 +22,16 @@ sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt-get update
 sudo apt install -y remmina remmina-plugin-rdp remmina-plugin-secret
 
+
 peints 'Install VirtualBox'
 sudo apt install -y virtualbox
 
 peints 'Install vlc'
 sudo apt install -y vlc 
+
+peints 'Install tmux'
+sudo apt install -y tmux 
+
 
 peints 'Install WineHQ'
 wget -nc https://dl.winehq.org/wine-builds/Release.key
