@@ -11,6 +11,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
+export TERM="xterm-256color" 
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -75,6 +77,7 @@ plugins=(
   pyenv
   pylint
   sudo
+  docker
   vscode
   pylint
   virtualenv
