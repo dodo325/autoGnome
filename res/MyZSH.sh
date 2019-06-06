@@ -65,8 +65,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 
 POWERLEVEL9K_ANACONDA_BACKGROUND='green'
 
-
-
 plugins=(
   git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
   django
@@ -146,28 +144,44 @@ gtts() { gtts-cli $1 | mpg123 - }
 
 alias d2='source activate Django2'
 alias dea='source deactivate'
+alias pipver='pip freeze | grep' 
 
 # mini organaze:
 
 mysort() {
-   mkdir pdf; mv *.pdf pdf/;
-   mkdir torrent; mv *.torrent torrent/;
-   mkdir doc; mv *.doc* doc/;
+   mkdir -p pdf; mv *.pdf pdf/;
+   mkdir -p torrent; mv *.torrent torrent/;
+   
+   mkdir -p doc; 
+   mv *.doc doc/;
+   mv *.docx doc/;
+   mv *.ppsx doc/;
+   mv *.xlsx doc/;
 
-   mkdir -p img; mv *.png img/;
-   mkdir -p img; mv *.jpg img/;
-   mkdir -p img; mv *.svg img/; 
-   mkdir -p img; mv *.kra img/; 
+   mkdir -p video; 
+   mv *.avi video/;
+   
+   
+
+   mkdir -p img; 
+   mv *.png img/;
+   mv *.jpg img/;
+   mv *.svg img/; 
+   mv *.kra img/; 
 
 
-   mkdir -p exe; mv *.exe exe/;
-   mkdir -p deb; mv *.deb deb/;
+   mkdir -p programs; 
+   mv *.exe programs/;
+   mv *.deb  programs/;
+   mv *.sh  programs/;
 
-   mkdir -p deb; mv *.deb deb/;
 
-   mkdir -p zip; mv *.zip zip/;
-   mkdir -p zip; mv *.7z zip/;
-   mkdir -p zip; mv *.rar zip/;
+   mkdir -p zip; 
+   mv *.zip zip/;
+   mv *.7z zip/;
+   mv *.rar zip/;
+   mv *.bz2 zip/;
+
 
    mkdir -p music; mv *.mp3 music/;
    
@@ -178,19 +192,17 @@ mysort() {
 
 }
 
-# added by Anaconda3 5.3.1 installer
-# >>> conda init >>>
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/dodo/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$('/home/dodo/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
     if [ -f "/home/dodo/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/home/dodo/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
     else
-        \export PATH="/home/dodo/anaconda3/bin:$PATH"
+        export PATH="/home/dodo/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda init <<<
+# <<< conda initialize <<<
