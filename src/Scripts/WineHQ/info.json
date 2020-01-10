@@ -1,0 +1,14 @@
+{
+    "name":"WineHQ", 
+    "tags":[
+        "Windows",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

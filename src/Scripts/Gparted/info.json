@@ -1,0 +1,14 @@
+{
+    "name":"Gparted", 
+    "tags":[
+        "Managing disk partitions",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name":"Audacity", 
+    "tags":[
+        "Audio editor",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

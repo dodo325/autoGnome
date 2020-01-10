@@ -1,0 +1,14 @@
+{
+    "name":"VLS", 
+    "tags":[
+        "Media player",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

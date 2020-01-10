@@ -1,0 +1,15 @@
+{
+    "name":"qBittorrent", 
+    "tags":[
+        "BitTorrent",
+        "Programm",
+        "GUI",
+        "P2P"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

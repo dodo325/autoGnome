@@ -1,0 +1,14 @@
+{
+    "name":"VSCode", 
+    "tags":[
+        "IDE",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

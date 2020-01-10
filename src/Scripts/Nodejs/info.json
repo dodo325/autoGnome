@@ -1,0 +1,12 @@
+{
+    "name":"NodeJs", 
+    "tags":[
+        "Programm language"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

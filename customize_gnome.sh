@@ -1,5 +1,6 @@
 #!/bin/bash
 # Caution! Regex!
+# Refact
 remove_reg(){
 	suffix=$2
 	input_s=$1

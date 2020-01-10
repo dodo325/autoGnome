@@ -1,0 +1,1 @@
+code --install-extension ms-ceintl.vscode-language-pack-ru

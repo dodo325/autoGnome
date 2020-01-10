@@ -1,0 +1,14 @@
+{
+    "name":"GoogleChrome", 
+    "tags":[
+        "Browser",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

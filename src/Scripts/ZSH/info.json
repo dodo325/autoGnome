@@ -1,0 +1,14 @@
+{
+    "name":"ZSH", 
+    "tags":[
+        "framework",
+        "terminal",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

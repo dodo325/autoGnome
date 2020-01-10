@@ -1,0 +1,12 @@
+{
+    "name":"Java8", 
+    "tags":[
+        "Programm language"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

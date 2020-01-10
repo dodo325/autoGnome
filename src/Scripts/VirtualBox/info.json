@@ -1,0 +1,14 @@
+{
+    "name":"VirtualBox", 
+    "tags":[
+        "VM",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

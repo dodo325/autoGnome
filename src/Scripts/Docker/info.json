@@ -1,0 +1,14 @@
+{
+    "name":"Docker", 
+    "tags":[
+        "Containers",
+        "Programm",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

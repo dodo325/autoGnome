@@ -1,0 +1,14 @@
+{
+    "name":"Remmina", 
+    "tags":[
+        "GUI",
+        "SSH",
+        "Client"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

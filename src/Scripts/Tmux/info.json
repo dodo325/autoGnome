@@ -1,0 +1,14 @@
+{
+    "name":"tmux", 
+    "tags":[
+        "Screen",
+        "Programm",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

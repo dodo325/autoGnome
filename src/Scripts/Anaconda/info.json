@@ -1,0 +1,15 @@
+{
+    "name":"Anaconda", 
+    "tags":[
+        "Platform ",
+        "Programm",
+        "CLI",
+        "Python"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

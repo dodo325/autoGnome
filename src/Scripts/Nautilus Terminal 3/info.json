@@ -1,0 +1,14 @@
+{
+    "name":"Nautilus", 
+    "tags":[
+        "GUI",
+        "Programm",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}
