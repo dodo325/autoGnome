@@ -20,22 +20,56 @@ def arg_parse():
 
     return args
 
+def recursive_dfs(graph, node):
+    result = []
+    seen = set()
+
+    def recursive_helper(node):
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                result.append(neighbor)     # this line will be replaced below
+                seen.add(neighbor)
+                recursive_helper(neighbor)
+
+    recursive_helper(node)
+    return result
+
+def recursive_topological_sort(graph, node):
+    result = []
+    seen = set()
+
+    def recursive_helper(node):
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                seen.add(neighbor)
+                recursive_helper(neighbor)
+        result.insert(0, node)              # this line replaces the result.append line
+
+    recursive_helper(node)
+    return result
+
 def get_fils_list(path):
     pass
 
 def get_subdirs_list(path):
     return [dI for dI in os.listdir(path) if os.path.isdir(os.path.join(path,dI))]
 
-def get_scrips_list() -> dict:
+def get_scripts_list() -> dict:
     subdirs = get_subdirs_list("../Scripts")
-    sctips = dict()
+    sctipts = dict()
     for subdir in subdirs:
         try:
             with open('../Scripts/'+subdir+'/info.json') as json_file:
-                sctips[subdir] = json.load(json_file)
+                sctipts[subdir] = json.load(json_file)
         except FileNotFoundError as e:
-            logging.warning(f'[get_scrips_list] {e}')
-    return sctips
+            logging.warning(f'[get_sctipts_list] {e}')
+    return sctipts
+
+def get_script_dependences_order(scripts, script_name):
+    graph = dict()
+    for name, data in scripts.items():
+        graph[name] = data['dependence']
+    return recursive_topological_sort(graph, script_name)
 
 def main():
     global args
