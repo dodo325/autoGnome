@@ -27,7 +27,7 @@ def recursive_dfs(graph, node):
     def recursive_helper(node):
         for neighbor in graph[node]:
             if neighbor not in seen:
-                result.append(neighbor)     # this line will be replaced below
+                result.append(neighbor)
                 seen.add(neighbor)
                 recursive_helper(neighbor)
 
@@ -43,7 +43,7 @@ def recursive_topological_sort(graph, node):
             if neighbor not in seen:
                 seen.add(neighbor)
                 recursive_helper(neighbor)
-        result.insert(0, node)              # this line replaces the result.append line
+        result.insert(0, node)
 
     recursive_helper(node)
     return result
@@ -64,6 +64,12 @@ def get_scripts_list() -> dict:
         except FileNotFoundError as e:
             logging.warning(f'[get_sctipts_list] {e}')
     return sctipts
+
+def get_all_tags(scripts):
+    tags = set()
+    for name, data in scripts.items():
+        tags.update(data['tags'])
+    return tags
 
 def get_script_dependences_order(scripts, script_name):
     graph = dict()

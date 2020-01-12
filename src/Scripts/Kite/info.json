@@ -1,12 +1,14 @@
 {
-    "name":"Gparted", 
-    "description": "Managing disk partitions",
+    "name":"Nautilus", 
     "tags":[
+        "GUI",
         "Programm",
-        "GUI"
+        "CLI",
+        "AI",
+        "Tool"
     ],
     "dependence":[
-        
+        "VSCode"
     ],
     "installers": {
         "default": "install.sh"
