@@ -1,8 +1,7 @@
 {
-    "name":"Nautilus Terminal 3", 
+    "name":"GitZen", 
     "tags":[
-        "GUI",
-        "Programm",
+        "terminal",
         "CLI"
     ],
     "dependence":[
