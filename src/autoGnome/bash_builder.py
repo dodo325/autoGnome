@@ -47,41 +47,21 @@ def recursive_topological_sort(graph, node):
         result.insert(0, node)
 
     recursive_helper(node)
-    return result
+    return result[::-1]
 
 def get_fils_list(path):
     pass
 
 def get_path(filename):
-    fpath = os.path.abspath(filename)
+    fpath = os.path.dirname(os.path.abspath(filename + '/' + __file__)) #-> src_dir + Scrips
+    #fpath = os.path.abspath(filename)
     return fpath
-
-def collect_scripts():
-    scripts = get_scripts_list()
-    header = get_path("../Scripts/header.sh")
-    build_dir = get_path("../../build/install.sh")
-    
-    headerf = open(header, "r")
-    build_dirf = open(build_dir, "w")
-    build_dirf.write("")
-    build_dirf.close()
-
-    build_dirf = open(build_dir, "a") #a
-    build_dirf.write(headerf.read())
-    headerf.close()
-    
-    for script in scripts.keys():
-        files = get_path("../Scripts")+'/'+scripts[script]["name"]+'/'+scripts[script]['installers']['default']
-        filesf = open(files, "r")
-        build_dirf.write(filesf.read())
-    
-    build_dirf.close()
 
 def get_subdirs_list(path):
     return [dI for dI in os.listdir(path) if os.path.isdir(os.path.join(path,dI))]
 
 def get_scripts_list() -> dict:
-    script_dir = get_path("../Scripts")
+    script_dir = get_path("Scripts")
     subdirs = get_subdirs_list(script_dir)
     sctipts = dict()
     for subdir in subdirs:
@@ -98,11 +78,47 @@ def get_all_tags(scripts):
         tags.update(data['tags'])
     return tags
 
-def get_script_dependences_order(scripts, script_name):
+def get_scripts_dependences_order(scripts, scripts_name):
     graph = dict()
     for name, data in scripts.items():
         graph[name] = data['dependence']
-    return recursive_topological_sort(graph, script_name)
+    
+    scripts_dependences = []
+    for name in scripts_name:
+        script_dependences = recursive_topological_sort(graph, name)
+        for scripts_dependence in script_dependences:
+            if scripts_dependence not in scripts_dependences:
+                scripts_dependences.append(scripts_dependence)
+    return scripts_dependences
+
+
+def collect_scripts(names: list, scripts: dict, build_dir: str = None) -> None:
+    logging.debug(f"[collect_scripts] names = {names}")
+    scripts_dependences = get_scripts_dependences_order(names, scripts)
+    header = get_path("../Scripts/header.sh")
+
+    if not build_dir:
+        build_dir = get_path("../../build/install.sh")
+    
+    headerf = open(header, "r")
+    build_dirf = open(build_dir, "w")
+    build_dirf.write("")
+    build_dirf.close()
+
+    build_dirf = open(build_dir, "a") #a
+    build_dirf.write(headerf.read())
+    build_dirf.write("\n")
+    headerf.close()
+    
+    for script in scripts_dependences:
+        logging.debug(f"[collect_scripts] script = {script}")
+        install_file = get_path("../Scripts")+'/'+script+'/'+scripts[script]['installers']['default']
+        install_filef = open(install_file, "r")
+        logging.debug(f"[collect_scripts] install_file = {install_file}")
+        build_dirf.write("\n")
+        build_dirf.write(install_filef.read())
+    
+    build_dirf.close()
 
 def main():
     global args
