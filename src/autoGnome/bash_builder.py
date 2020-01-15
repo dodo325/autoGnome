@@ -123,10 +123,10 @@ def collect_scripts(scripts_names: list, scripts: dict, build_dir: str = None) -
             build_dir += "/"
     build_file = build_dir + "install.sh"
      
-    
-    build_dirf = open(build_file, "a") #a
-    build_dirf.write("")
-    
+    with open(build_file, "w") as f:
+        f.write("")    
+
+    build_dirf = open(build_file, "a")
     headerf = open(header, "r")
     build_dirf.write(headerf.read())
     build_dirf.write("\n")
