@@ -1,9 +1,11 @@
 {
-    "name":"Audacity", 
+    "name":"Stacer", 
+    "description":"Linux System Optimizer & Monitoring",
     "tags":[
-        "Audio editor",
+        "Containers",
         "Programm",
-        "GUI"
+        "GUI",
+        "Monitoring"
     ],
     "dependence":[
         "GUI"

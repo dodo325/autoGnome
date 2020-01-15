@@ -7,7 +7,7 @@
         "IDE"
     ],
     "dependence":[
-        
+        "GUI"
     ],
     "installers": {
         "default": "install.sh"

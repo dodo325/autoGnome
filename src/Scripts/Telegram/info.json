@@ -4,7 +4,7 @@
         "Messager"
     ],
     "dependence":[
-        
+        "GUI"
     ],
     "installers": {
         "default": "install.sh"

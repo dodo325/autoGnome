@@ -6,3 +6,6 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code # or code-insiders
 rm -f microsoft.gpg
+
+
+code --install-extension visualstudioexptteam.vscodeintellicode

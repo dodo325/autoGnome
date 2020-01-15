@@ -8,6 +8,7 @@
         "Tool"
     ],
     "dependence":[
+        "GUI",
         "VSCode"
     ],
     "installers": {
