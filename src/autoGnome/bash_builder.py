@@ -7,10 +7,11 @@ import logging
 import argparse
 import os
 import json
+import shutil
 import sys
 logging.basicConfig(level=logging.INFO)
 
-def arg_parse():
+def arg_parse() -> dict:
     ''' arg_parse() -> dict
     Parse arguments grom cli using argparse. 
     '''
@@ -107,34 +108,48 @@ def get_scripts_dependences_order(scripts: dict, scripts_names: list):
 
 
 def collect_scripts(scripts_names: list, scripts: dict, build_dir: str = None) -> None:
+
     logging.debug(f"[collect_scripts] names = {scripts_names}")
     scripts_dependences = get_scripts_dependences_order(scripts, scripts_names)
     header = get_path_local("../Scripts/header.sh")
 
+    
     if not build_dir:
-        build_dir = get_path_local("../../build/install.sh")
+        build_dir = get_path_local("../../build/")         
+    
+    if not build_dir.endswith("/"):
+            build_dir += "/"
+    build_file = build_dir + "install.sh"
+     
+    
+    build_dirf = open(build_file, "a") #a
+    build_dirf.write("")
     
     headerf = open(header, "r")
-    build_dirf = open(build_dir, "w")
-    build_dirf.write("")
-    build_dirf.close()
-
-    build_dirf = open(build_dir, "a") #a
     build_dirf.write(headerf.read())
     build_dirf.write("\n")
     headerf.close()
     
     for script in scripts_dependences:
         logging.info(f"[collect_scripts] script = {script}")
-        install_file = get_path_local("../Scripts")+'/'+script+'/'+scripts[script]['installers']['default']
+
+        install_dir = get_path_local("../Scripts")+'/'+script+'/'
+        install_file = install_dir + scripts[script]['installers']['default']
         install_filef = open(install_file, "r")
+        
         logging.debug(f"[collect_scripts] install_file = {install_file}")
         build_dirf.write("\n")
         build_dirf.write(install_filef.read())
-    
+        
+        res_dir = install_dir + "res/"
+        if os.path.isdir(res_dir):
+            try:
+                destination = shutil.copytree(res_dir, build_dir + "res/", copy_function = shutil.copy)  
+            except Exception as e:
+                logging.warning(f"[collect_scripts] {e}")
     build_dirf.close()
 
-def main():
+if __name__ == "__main__":
     global args
     args = arg_parse()
     scripts = get_scripts_list(scripts_dir=args['scripts_dir'])
@@ -142,9 +157,7 @@ def main():
         scripts_names = args['scripts_names'], 
         scripts = scripts, 
         build_dir = args['build_dir'],
-        )
-if __name__ == "__main__":
-  main()
+    )
 
 
   
