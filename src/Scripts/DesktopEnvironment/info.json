@@ -1,0 +1,14 @@
+{
+    "name":"Desktop Environment Checker", 
+    "tags":[
+        "Check",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+
+    "installers": {
+        "default": "desktop_check.sh"
+    }
+}

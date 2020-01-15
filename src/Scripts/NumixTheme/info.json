@@ -1,9 +1,10 @@
 {
-    "name":"Audacity", 
+    "name":"Nautilus Terminal 3", 
     "tags":[
-        "Audio editor",
+        "GUI",
         "Programm",
-        "GUI"
+        "CLI",
+        "Gnome"
     ],
     "dependence":[
         "DesktopEnvironment"

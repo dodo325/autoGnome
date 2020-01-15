@@ -6,7 +6,7 @@
         "GUI"
     ],
     "dependence":[
-        
+        "DesktopEnvironment"
     ],
     "installers": {
         "default": "install.sh"
