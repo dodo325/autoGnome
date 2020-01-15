@@ -2,3 +2,5 @@ colorama
 termcolor
 bullet
 argparse
+# urwid
+inquirer

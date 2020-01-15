@@ -11,6 +11,8 @@ import shutil
 import sys
 logging.basicConfig(level=logging.INFO)
 
+import inquirer
+
 def arg_parse() -> dict:
     ''' arg_parse() -> dict
     Parse arguments grom cli using argparse. 
@@ -26,10 +28,10 @@ def arg_parse() -> dict:
     parser.add_argument("-d", "--build-dir", type=str, default=None,
                         help="path to Scripts\ dir")
                         # scripts_names
-    parser.add_argument('-n','--scripts-names', nargs='+', help='<Required> Set scripts_names', required=True)
-
+    parser.add_argument('-n','--scripts-names', nargs='+', help='Set scripts_names', required=False)
+    
     args = vars(parser.parse_args())
-    logging.debug(f'[arg_parse] args= {args}') 
+    logging.info(f'[arg_parse] args= {args}') 
     return args
 
 def recursive_dfs(graph, node):
@@ -153,6 +155,15 @@ if __name__ == "__main__":
     global args
     args = arg_parse()
     scripts = get_scripts_list(scripts_dir=args['scripts_dir'])
+    
+    if not args['scripts_names']:
+        questions = [inquirer.Checkbox(
+            'scripts_names',
+            message="What do you want to install?",
+            choices=scripts.keys(),
+        )]
+        answers = inquirer.prompt(questions) 
+        args['scripts_names'] = answers['scripts_names']
     collect_scripts(
         scripts_names = args['scripts_names'], 
         scripts = scripts, 
