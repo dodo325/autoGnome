@@ -1,2 +1,2 @@
 peints 'Install qBittorrent'
-sudo apt install qbittorrent
+sudo apt install qbittorrent -y
