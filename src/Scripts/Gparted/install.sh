@@ -1,2 +1,2 @@
 peints 'Install gparted'
-sudo apt-get install gparted
+sudo apt-get install gparted -y
