@@ -14,4 +14,4 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 source ~/.zshrc
 
-yes | cp res/MyZSH.sh ~/.zshrc
+# yes | cp res/MyZSH.sh ~/.zshrc
