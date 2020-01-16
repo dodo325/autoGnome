@@ -1,0 +1,15 @@
+{
+    "name":"OBS Studio", 
+    "description": "Free and open source software for video recording and live streaming.", 
+    "tags":[
+        "GUI",
+        "Programm",
+        "CLI"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

@@ -1,5 +1,6 @@
 {
     "name":"VSCode", 
+    "description": "Visual Studio Code is a source-code editor It includes support for debugging, embedded Git control and GitHub, syntax highlighting, intelligent code completion, snippets, and code refactoring. It is highly customizable, allowing users to change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.",
     "tags":[
         "IDE",
         "Programm",
