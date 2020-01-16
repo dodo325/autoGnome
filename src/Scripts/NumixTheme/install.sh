@@ -3,18 +3,18 @@
 prints "[NumixTheme] Check GNOME-shell"
 
 gnome_version=$(gnome-shell --version)
-if [[ $gnome_version =~ "GNOME Shell 3*" ]] ;
+if [[ $gnome_version == GNOME* ]] ;
 then
     prints "[OK] GNOME-shell"
 else
-	prints "[fail] GNOME Shell not install"
+    peints_err "[fail] GNOME Shell not install"
     exit;
 fi
 
 sudo apt-get update;
 
 printf '\nRemove useless applications...'
-sudo apt autoremove gnome-sudoku gnome-mahjongg gnome-mines gnome-todo gnome-todo-common aisleriot
+sudo apt autoremove gnome-sudoku gnome-mahjongg gnome-mines gnome-todo gnome-todo-common aisleriot -y
 
 printf '\nInstall gnome-tweak-tool...'
 sudo apt install chrome-gnome-shell gnome-shell-extensions gnome-tweak-tool -y
