@@ -4,3 +4,5 @@ wget -O anaconda.sh $CONTREPO$ANACONDAURL
 chmod +x anaconda.sh
 ./anaconda.sh
 
+prints "[ok] Anaconda installed!"
+rm anaconda.sh
