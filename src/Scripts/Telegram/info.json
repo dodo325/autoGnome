@@ -1,0 +1,12 @@
+{
+    "name":"Telegram", 
+    "tags":[
+        "Messager"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

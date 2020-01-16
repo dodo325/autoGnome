@@ -1,0 +1,50 @@
+{
+    "window.titleBarStyle": "custom",
+    "typescript.locale": "ru",
+    "terminal.integrated.setLocaleVariables": true,
+    "python.jediEnabled": false,
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
+    "terminal.integrated.fontFamily": "'PowerlineSymbols', 'monospace'",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "python.linting.pylintEnabled": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    "vscode_custom_css.imports": [
+        "file:///opt/vscode/synthwave84.css"
+    ],
+    "vscode_custom_css.policy": true,
+    "breadcrumbs.enabled": true,
+    "docker.groupImagesBy": "None",
+    "workbench.colorTheme": "SynthWave '84",
+    "kite.showWelcomeNotificationOnStartup": false,
+
+    "arduino.additionalUrls": "https://arduino.esp8266.com/stable/package_esp8266com_index.json",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "terminal.integrated.inheritEnv": false,
+    "files.autoSave": "afterDelay",
+
+    "background.enabled": true,
+    "background.useDefault": false,
+    "background.customImages": [ 
+        "file:///home/dodo/Изображения/IMGBIN_sinon-asuna-kirito-leafa-sword-art-online-hollow-realization-png_QUKv9ZNm.png",
+        "https://user-images.githubusercontent.com/24371189/47023104-85336080-d191-11e8-957f-b4ac3f8a24c1.png",
+        "file:///home/dodo/Изображения/hiclipart.com.png"
+    ],
+    "background.style": {
+        // "content": "''",
+        // "pointer-events": "none",
+        // "position": "absolute",
+        // "z-index": "99999",
+        "background-size": "400px",
+        // "max-width": "10%",
+        // "width": "auto",
+        // "height": "",
+        // "background-position": "0% 0%",
+        // "background-size": "cover",
+        // "background-repeat": "no-repeat",
+        "opacity": 0.1
+    }
+}

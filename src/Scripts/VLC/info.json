@@ -1,0 +1,14 @@
+{
+    "name":"VLC", 
+    "tags":[
+        "Media player",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

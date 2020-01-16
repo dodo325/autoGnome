@@ -1,0 +1,14 @@
+{
+    "name":"GIT", 
+    "tags":[
+        "VCS",
+        "Programm",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

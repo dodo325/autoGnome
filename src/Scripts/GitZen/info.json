@@ -1,0 +1,13 @@
+{
+    "name":"GitZen", 
+    "tags":[
+        "terminal",
+        "CLI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

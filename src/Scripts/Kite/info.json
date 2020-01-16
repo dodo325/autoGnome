@@ -1,0 +1,17 @@
+{
+    "name":"Nautilus", 
+    "tags":[
+        "GUI",
+        "Programm",
+        "CLI",
+        "AI",
+        "Tool"
+    ],
+    "dependence":[
+        "GUI",
+        "VSCode"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

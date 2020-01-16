@@ -1,0 +1,12 @@
+{
+    "name":"Python3.7", 
+    "tags":[
+        "Programm language"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

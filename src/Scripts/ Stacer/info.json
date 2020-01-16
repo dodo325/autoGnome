@@ -1,0 +1,16 @@
+{
+    "name":"Stacer", 
+    "description":"Linux System Optimizer & Monitoring",
+    "tags":[
+        "Containers",
+        "Programm",
+        "GUI",
+        "Monitoring"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

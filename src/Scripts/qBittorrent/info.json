@@ -1,0 +1,16 @@
+{
+    "name":"qBittorrent", 
+    "description":"BitTorrent GUI Client",
+    "tags":[
+        "BitTorrent",
+        "Programm",
+        "GUI",
+        "P2P"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

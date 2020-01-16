@@ -1,0 +1,15 @@
+{
+    "name":"Nautilus Terminal 3", 
+    "tags":[
+        "GUI",
+        "Programm",
+        "CLI",
+        "Gnome"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name":"Discord", 
+    "tags":[
+        "Voice & text chat app",
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

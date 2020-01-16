@@ -1,0 +1,14 @@
+{
+    "name":"Synergy", 
+    "description": "Sharing mouse and keyboard between multiple computers",
+    "tags":[
+        "Programm",
+        "GUI"
+    ],
+    "dependence":[
+        "GUI"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}

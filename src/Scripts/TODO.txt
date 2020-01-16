@@ -1,0 +1,20 @@
+steam
+anki
+dbeaver
+ghex
+arduino ide
+mulrybootusb
+bleachbit
+fslint
+skype
+teamviwer
+nutty
+blender
+drav.io
+kid3
+OBS Studio
+
+
+++ torrent
+- VMVare
+- CrossOver
