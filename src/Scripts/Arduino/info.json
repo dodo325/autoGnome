@@ -1,0 +1,14 @@
+{
+    "name":"Arduino", 
+    "tags":[
+        "IDE ",
+        "Programm",
+        "C++"
+    ],
+    "dependence":[
+        
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}
