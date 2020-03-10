@@ -1,6 +1,5 @@
 steam
 anki
-dbeaver
 ghex
 arduino ide
 mulrybootusb

@@ -1,0 +1,17 @@
+{
+    "name":"DBeaver", 
+    "description":"Free multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases",
+    "tags":[
+        "Database",
+        "Programm",
+        "GUI",
+        "SQL"
+    ],
+    "dependence_comment":[
+        "GUI",
+        "snap"
+    ],
+    "installers": {
+        "default": "install.sh"
+    }
+}
