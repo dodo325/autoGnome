@@ -17,7 +17,7 @@ code --install-extension donjayamanne.python-extension-pack
 code --install-extension remisa.shellman
 code --install-extension gruntfuggly.todo-tree
 
-sudo wget -P /opt/vscode/ https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/synthwave84.css
-code --install-extension be5invis.vscode-custom-css
+# sudo wget -P /opt/vscode/ https://raw.githubusercontent.com/robb0wen/synthwave-vscode/master/synthwave84.css
+# code --install-extension be5invis.vscode-custom-css
 code --install-extension robbowen.synthwave-vscode 
 code --install-extension donjayamanne.githistory

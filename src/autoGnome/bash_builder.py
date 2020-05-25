@@ -98,7 +98,7 @@ def get_all_tags(scripts):
 def get_scripts_dependences_order(scripts: dict, scripts_names: list):
     graph = dict()
     for name, data in scripts.items():
-        graph[name] = data['dependence']
+        graph[name] = data.get('dependence', dict()) 
     
     scripts_dependences = []
     for name in scripts_names:

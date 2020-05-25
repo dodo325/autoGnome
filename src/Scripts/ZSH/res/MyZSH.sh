@@ -3,8 +3,9 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/dodo/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -65,8 +66,11 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs histor
 
 POWERLEVEL9K_ANACONDA_BACKGROUND='green'
 
+
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
 plugins=(
-  git # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+  git 
+  debian
   django
   cp
   pip
@@ -84,7 +88,6 @@ plugins=(
   history
   zsh-syntax-highlighting
   web-search
-  debian
   tmux
   urltools
 )
@@ -137,10 +140,15 @@ alias lsp='stat -c "%a %n" *'
 alias locip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias myip='curl ipinfo.io/ip'
 alias lsip='arp'
+
 killport() { sudo lsof -t -i tcp:"$1" | xargs kill -9 ; }
+alias lsports='sudo lsof -i -P -n'
 
 gtts() { gtts-cli $1 | mpg123 - }
 
+# ru
+alias ды='ls'
+alias св='св'
 
 alias d2='source activate Django2'
 alias dea='source deactivate'
@@ -191,6 +199,12 @@ mysort() {
    find . -empty -type d -delete;
 
 }
+
+# logkeys:
+#alias kg='sudo ps -aux | grep "logkeys"'
+#alias kgon='sudo logkeys --start --output /home/dodo/.oh-my-zsh/log/klogger.log' #TODO: fix keymaps with https://github.com/kernc/logkeys/blob/master/docs/Keymaps.md
+#alias kgoff='sudo logkeys --kill'
+#alias kgt='tail --follow /home/dodo/.oh-my-zsh/log/klogger.log'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

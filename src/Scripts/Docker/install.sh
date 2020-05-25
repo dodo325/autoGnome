@@ -14,4 +14,6 @@ sudo apt-get install libffi-dev libssl-dev -y
 
 sudo apt-get install -y python python-pip
 
+sudo pip install docker-compose
+
 sudo apt-get remove python-configparser -y
