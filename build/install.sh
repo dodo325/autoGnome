@@ -11,16 +11,11 @@ function peints { echo -e "\033[1;42m $1 \033[0m"; }
 function peints_err { echo -e "\033[7;105;31m $1 \033[0m"; }
 
 
-#wget https://www.arduino.cc/download_handler.php
-prints "[info] Arduino installing...!"
-sudo apt-get install gcc-avr avr-libc -y
-sudo apt-get update && sudo apt-get install arduino arduino-core  -y
-sudo usermod -aG dialout ${USER}
-
-prints "[ok] Arduino installed!"
+sudo add-apt-repository 'deb https://repo.vivaldi.com/archive/deb/ stable main' 
+wget -qO- https://repo.vivaldi.com/archive/linux_signing_key.pub | sudo apt-key add - 
+sudo apt update && sudo apt install vivaldi-stable -y
 
 
-sudo snap install discord --classic
 CURRENT_DESKTOP=$(echo "$XDG_CURRENT_DESKTOP" | grep -Eoi 'xfce|kde|gnome|unity')
 CURRENT_DESKTOP=$(echo "$CURRENT_DESKTOP" | sed -e 's/\(.*\)/\L\1/')
 peints "[GUI] Checking Desktop Environment"
@@ -33,37 +28,9 @@ else
 fi
 peints 'Install VirtualBox'
 sudo apt install -y virtualbox
-printf '\nInstall OBS Studio'
-sudo apt-get install ffmpeg -y
-sudo add-apt-repository ppa:obsproject/obs-studio -y
+sudo add-apt-repository ppa:oguzhaninan/stacer -y
 sudo apt-get update
-sudo apt-get install obs-studio -y
-sudo apt update
-sudo apt install nodejs npm -y
-
-sudo apt-get install -y zsh
-chsh -s $(which zsh)
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
-#TODO: проблема с exit!
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-
-sudo apt-get install -y fonts-powerline
-fc-cache -vf
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-source ~/.zshrc
-
-# yes | cp res/MyZSH.sh ~/.zshrc
-peints 'Install WineHQ'
-wget -nc https://dl.winehq.org/wine-builds/Release.key
-sudo apt-key add Release.key
-sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
-sudo apt-get update
-sudo apt-get install --install-recommends winehq-stable
-rm -f Release.key
+sudo apt-get install stacer -y
 prints "[GNOME-Extensions] Check GNOME-shell"
 
 gnome_version=$(gnome-shell --version)
@@ -94,21 +61,39 @@ peints 'Install Synergy'
 sudo apt-get install libcanberra-gtk-module sni-qt -y
 sudo apt install synergy -y
 
-sudo add-apt-repository ppa:oguzhaninan/stacer -y
+# sudo apt install qtcreator qtbase5-dev cmake make g++ xorg-dev libssl-dev libx11-dev libsodium-dev libgl1-mesa-glx libegl1-mesa libcurl4-openssl-dev libavahi-compat-libdnssd-dev qtdeclarative5-dev libqt5svg5-dev libsystemd-dev git build-essential
+# git clone https://github.com/symless/synergy-core.git
+# cd synergy*
+# mkdir build
+# cd build
+# cmake ..
+# make
+# sudo make install
+peints 'Install qBittorrent'
+sudo apt install qbittorrent -y
+
+
+sudo apt-get install -y zsh
+chsh -s $(which zsh)
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+#TODO: проблема с exit!
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+
+sudo apt-get install -y fonts-powerline
+fc-cache -vf
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+source ~/.zshrc
+
+# yes | cp res/MyZSH.sh ~/.zshrc
+peints 'Install audacity'
+sudo add-apt-repository ppa:ubuntuhandbook1/audacity -y
 sudo apt-get update
-sudo apt-get install stacer -y
-peints 'Install Nautilus Terminal 3' 
-sudo add-apt-repository ppa:flozz/nautilus-terminal -y
-sudo apt update
-sudo apt install nautilus-terminal -y
+sudo apt-get install -y audacity
 
-nautilus -q
-sudo apt install dconf-editor -y
-
-peints 'Install krita'
-#sudo add-apt-repository ppa:kritalime/ppa
-#sudo apt-get update
-sudo apt-get install -y krita krita-l10n
 #!/bin/bash
 
 prints "[NumixTheme] Check GNOME-shell"
@@ -143,45 +128,8 @@ echo '[Settings]' > ~/.config/gtk-3.0/settings.ini
 echo 'gtk-application-prefer-dark-theme=1' >> ~/.config/gtk-3.0/settings.ini
 
 
-wget -qO- http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -
-sudo add-apt-repository "deb [arch=i386,amd64] http://repo.vivaldi.com/stable/deb/ stable main"
-sudo apt update && sudo apt install -y vivaldi-stable
-rm -f linux_signing_key.pub
-peints 'Install audacity'
-sudo add-apt-repository ppa:ubuntuhandbook1/audacity -y
-sudo apt-get update
-sudo apt-get install -y audacity
-
-peints 'Install tmux'
-sudo apt install -y tmux 
-peints 'Install qBittorrent'
-sudo apt install qbittorrent -y
-
-
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -y -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-sudo apt-get update
-
-sudo apt-get install google-chrome-stable -y
-
-peints 'Install Docker'
-curl -fsSL https://get.docker.com -o get-docker.sh; sh get-docker.sh; rm get-docker.sh
-
-peints 'Install Docker: add in systemctl'
-sudo systemctl enable docker
-sudo systemctl status --no-pager docker
-
-peints 'Install Docker: add user in docker groupe'
-sudo usermod -aG docker ${USER}
-
-peints 'Install Docker-compose: add user in docker groupe'
-
-sudo apt-get install libffi-dev libssl-dev -y
-
-sudo apt-get install -y python python-pip
-
-sudo apt-get remove python-configparser -y
-
+sudo apt update
+sudo apt install nodejs npm -y
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -194,11 +142,3 @@ rm -f microsoft.gpg
 
 code --install-extension visualstudioexptteam.vscodeintellicode
 bash -c "$(wget -q -O - https://linux.kite.com/dls/linux/current)"
-CONTREPO=https://repo.continuum.io/archive/
-ANACONDAURL=$(wget -q -O - $CONTREPO index.html | grep "Anaconda3-" | grep "Linux" | grep "86_64" | head -n 1 | cut -d \" -f 2)
-wget -O anaconda.sh $CONTREPO$ANACONDAURL
-chmod +x anaconda.sh
-./anaconda.sh
-
-prints "[ok] Anaconda installed!"
-rm anaconda.sh
